@@ -24,23 +24,26 @@ def confusion_matrix(y_true, y_pred, normalize=None):
     if normalize not in ['true', 'pred', 'all', None]:
         raise ValueError("normalize must be one of {'true', 'pred', 'all', None}")
 
-    n_labels = # TODO (TASK 1)
+    # TODO (TASK 1)
+    n_labels = len(np.unique(y_true))
 
     cm = np.zeros((n_labels, n_labels))
-    # TODO (TASK 1)
+    for i, j in zip(y_true, y_pred):
+        cm[i, j] += 1
+
 
     if normalize == 'true':
-        cm = # TODO (TASK 1)
+        cm = cm / cm.sum(axis=0) # TODO (TASK 1)
     elif normalize == 'pred':
-        cm = # TODO (TASK 1)
+        cm = cm / cm.sum(axis=1) # TODO (TASK 1)
     elif normalize == 'all':
-        cm = # TODO (TASK 1)
+        cm = cm / cm.sum() # TODO (TASK 1)
 
     return cm
 
 
 def precision(y_true, y_pred):
-    return # TODO (TASK 2)
+    return confusion_matrix() # TODO (TASK 2)
 
 
 def recall(y_true, y_pred):
