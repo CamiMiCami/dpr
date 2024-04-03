@@ -13,9 +13,8 @@ for i, j in zip(y_true, y_pred):
     cm[i, j] += 1
 
 print(cm)
-cm = cm / cm.sum(axis=1)
-print(cm)
 
-precision = cm[1, 1]
+
+precision = cm[1,0]
 
 print("Precision: ", precision)

@@ -43,12 +43,15 @@ def confusion_matrix(y_true, y_pred, normalize=None):
 
 
 def precision(y_true, y_pred):
-    return confusion_matrix() # TODO (TASK 2)
+    cm = confusion_matrix(y_true, y_pred)
+    return cm[1,1]/(cm[1,1]+cm[1,0])
 
 
 def recall(y_true, y_pred):
-    return # TODO (TASK 2)
+    cm = confusion_matrix(y_true, y_pred)
+    return cm[1,1]/(cm[1,1]+cm[0,1])
 
 
 def false_alarm_rate(y_true, y_pred):
-    return # TODO (TASK 2)
+    cm = confusion_matrix(y_true, y_pred)
+    return cm[1,0]/(cm[1,1]+cm[0,1]+cm[1,0]+cm[0,0])
