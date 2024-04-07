@@ -1,20 +1,22 @@
 import numpy as np
 
+# Define the choices
+choices = [0, 1]
 
-"""cm test"""
-y_true = np.random.randint(0, 2, 20)
-y_pred = np.random.randint(0, 2, 20)
+# Set the size of the numpy array
+array_size = ((3,))  # For example, a 5x5 array
 
-n_labels = len(np.unique(y_true))
+# Initialize the numpy array with random choices from the given options
+y = np.random.choice(choices, size=array_size)
+X = np.random.randint(1, 3, size=(3,3))
 
-cm = np.zeros((n_labels, n_labels), dtype=np.int8)
+print(X)
+print(y)
 
-for i, j in zip(y_true, y_pred):
-    cm[i, j] += 1
+classes = np.unique(y)
+n_classes = len(classes)
+n_samples = len(y)
 
-print(cm)
 
-
-precision = cm[1,0]
-
-print("Precision: ", precision)
+print(np.sum(X[y==1], axis=0))
+print(X[y==1])
