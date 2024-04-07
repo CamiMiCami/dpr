@@ -40,7 +40,7 @@ class SpamClassifier(object):
         self.log_probs = np.zeros((self.n_classes, n_features))
         # TODO: Estimate log-likelihoods
         for i in self.classes:
-            self.log_probs = np.log((np.sum(X[y == i], axis=0) + self.alpha) / np.sum())
+            self.log_probs = np.log((np.sum(X[y == i], axis=0) + self.alpha) / np.sum(X[y == i]) + self.alpha * n_features)
 
         logging.debug(f"Training took {int(time.time() - start_time)} seconds.")
 
@@ -58,6 +58,7 @@ class SpamClassifier(object):
             (ndarray): Prediction vector with shape (num_samples,)
         """
         # TODO: Implement MAP decision for multinomial Naive Bayes
+        posteriors =
         return np.zeros(X.shape[0]) # This is just a placeholder
         
 
