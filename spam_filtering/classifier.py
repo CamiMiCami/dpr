@@ -40,7 +40,7 @@ class SpamClassifier(object):
         self.log_probs = np.zeros((self.n_classes, n_features))
         # TODO: Estimate log-likelihoods
         for i in self.classes:
-            self.log_probs = np.log()
+            self.log_probs = np.log((np.sum(X[y == i], axis=0) + self.alpha) / np.sum())
 
         logging.debug(f"Training took {int(time.time() - start_time)} seconds.")
 
