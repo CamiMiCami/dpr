@@ -1,8 +1,8 @@
 import numpy as np
 
 from metrics import confusion_matrix, precision, recall, false_alarm_rate
-#from datasets import download_and_prepare
-#from recommender_system import MatrixFactorization
+from datasets import download_and_prepare
+from recommender_system import MatrixFactorization
 
 
 def main():
@@ -37,9 +37,9 @@ def main():
     print("Part II - Movie Recommender System")
     print("------------------------------------------------")
 
-    #X = download_and_prepare('movielens-small', '../datasets')
-    #matrixFactor = MatrixFactorization(X)
-    #r_hat = matrixFactor.fit()
+    X = download_and_prepare('movielens-small', '../datasets')
+    matrixFactor = MatrixFactorization(X)
+    r_hat = matrixFactor.fit()
 
 if __name__ == "__main__":
     main()
