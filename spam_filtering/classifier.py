@@ -31,14 +31,14 @@ class SpamClassifier(object):
         self.classes = np.unique(y)
         self.n_classes = len(self.classes)
 
-        self.priors = np.zeros((self.n_classes,)) # This is just a placeholder
+        # Estimate priors
+        self.priors = np.zeros((self.n_classes,))
         for i in self.classes:
             self.priors[i] = (y == i).sum() / n_samples
-        # TODO: Estimate priors
         self.log_priors = np.log(self.priors)
 
+        # Estimate log-likelihoods
         self.log_probs = np.zeros((self.n_classes, n_features))
-        # TODO: Estimate log-likelihoods
         for i in self.classes:
             self.log_probs = np.log((np.sum(X[y == i], axis=0) + self.alpha) / np.sum(X[y == i]) + self.alpha * n_features)
 

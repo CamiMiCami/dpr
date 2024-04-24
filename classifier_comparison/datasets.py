@@ -15,13 +15,13 @@ def two_moons_dataset(size, training_split):
     size2 = math.ceil(size / 2)
 
     # create first banana
-    # TODO: Generate size1 samples for the first banana.
-    x1_banana1 =
-    x2_banana1 =
+    # Generate size1 samples for the first banana.
+    x1_banana1 = np.random.uniform(-2, 6, size1)
+    x2_banana1 = -0.3 * np.square(x1_banana1 - 2) + 4 * 0.7 * np.random.standard_normal()
 
     # create second banana
     # TODO: Generate size2 samples for the second banana.
-    x1_banana2 =
+    x1_banana2 = np.random.uniform(-6, 2, size2)
     x2_banana2 =
 
     # combine x1 and x2

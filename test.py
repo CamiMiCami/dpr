@@ -18,5 +18,3 @@ n_classes = len(classes)
 n_samples = len(y)
 
 
-print(np.sum(X[y==1], axis=0))
-print(X[y==1])
