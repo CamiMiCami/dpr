@@ -1,20 +1,20 @@
 import numpy as np
+import math
+import matplotlib.pyplot as plt
 
-# Define the choices
-choices = [0, 1]
+size = 1000
 
-# Set the size of the numpy array
-array_size = ((3,))  # For example, a 5x5 array
+size1 = math.floor(size / 2)
+size2 = math.ceil(size / 2)
 
-# Initialize the numpy array with random choices from the given options
-y = np.random.choice(choices, size=array_size)
-X = np.random.randint(1, 3, size=(3,3))
-
-print(X)
-print(y)
-
-classes = np.unique(y)
-n_classes = len(classes)
-n_samples = len(y)
+x1_banana1 = np.random.uniform(-2, 6, size1)
+x2_banana1 = -0.3 * (x1_banana1-2)**2 + 4 + 0.7 * np.random.randn(size1)
 
 
+plt.scatter(x1_banana1, x2_banana1, color='blue', marker='o')
+
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.title('Scatter Plot')
+
+plt.show()

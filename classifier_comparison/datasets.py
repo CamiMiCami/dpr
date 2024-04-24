@@ -22,7 +22,7 @@ def two_moons_dataset(size, training_split):
     # create second banana
     # TODO: Generate size2 samples for the second banana.
     x1_banana2 = np.random.uniform(-6, 2, size2)
-    x2_banana2 =
+    x2_banana2 = 0.3 * np.square(x1_banana2 + 2) - 4 * 0.7 * np.random.standard_normal()
 
     # combine x1 and x2
     data1 = np.stack((x1_banana1, x2_banana1), axis=1)
